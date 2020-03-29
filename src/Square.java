@@ -1,6 +1,6 @@
 import java.awt.*;
 
-class Square extends Sprite {
+class Square extends Sprite implements GameObject {
 
     private float vx = 150 + (float)(Math.random() * 200f);
     private float vy = 150 + (float)(Math.random() * 200f);
@@ -11,11 +11,17 @@ class Square extends Sprite {
     );
 
     Square () {
-        halfHeight = halfHeight = 20 + (float)(Math.random() * 50f);
+        halfHeight = halfWidth = 20 + (float)(Math.random() * 50f);
+    }
+
+    Square (int posX, int posY) {
+        this();
+        this.x = posX;
+        this.y = posY;
     }
 
     @Override
-    void update(GameCanvas canvas, float deltaTime) {
+    public void update(GameCanvas canvas, float deltaTime) {
         x += vx * deltaTime;
         y += vy * deltaTime;
         if (getLeft() < canvas.getLeft()) {
@@ -37,7 +43,7 @@ class Square extends Sprite {
     }
 
     @Override
-    void render(GameCanvas canvas, Graphics g) {
+    public void render(GameCanvas canvas, Graphics g) {
         g.setColor(COLOR);
         g.fillRect((int)(getLeft()), (int)(getTop()),
                 (int)(getWidth()), (int)(getHeight()));

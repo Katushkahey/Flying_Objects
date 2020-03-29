@@ -15,7 +15,7 @@ public class GameCanvas extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         long currentTime = System.nanoTime();
-        float delta = (currentTime - lastFrameTime)*0.000000001f;
+        float delta = (currentTime - lastFrameTime) * 0.000000001f;
         lastFrameTime = currentTime;
         try {
             Thread.sleep(17);

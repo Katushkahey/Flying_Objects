@@ -46,10 +46,4 @@ class Sprite {
     float getHeight() {
         return 2f*halfHeight;
     }
-
-    void update(GameCanvas canvas, float deltaTime) {
-    }
-
-    void render(GameCanvas canvas, Graphics g) {
-    }
 }
