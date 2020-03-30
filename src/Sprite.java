@@ -1,6 +1,6 @@
 import java.awt.*;
 
-class Sprite {
+class Sprite implements GameObject {
 
     float x;
     float y;
@@ -45,5 +45,13 @@ class Sprite {
 
     float getHeight() {
         return 2f*halfHeight;
+    }
+
+    @Override
+    public void update(GameCanvas canvas, float deltaTime) {
+    }
+
+    @Override
+    public void render(GameCanvas canvas, Graphics g) {
     }
 }

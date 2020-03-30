@@ -1,6 +1,6 @@
 import java.awt.*;
 
-class Square extends Sprite implements GameObject {
+class Square extends Sprite {
 
     private float vx = 150 + (float)(Math.random() * 200f);
     private float vy = 150 + (float)(Math.random() * 200f);
